@@ -1,0 +1,28 @@
+<div class="result-container flex justify-center items-center gap-4 mx-auto w-[53%] h-[350px]">
+    <div class="you-picked flex flex-col items-center flex-grow-2">
+      <p class="text-white mb-10">YOU PICKED</p>
+      <div class="circle {{picked}} {{resultGame=='YOU WIN' ? 'anim': ''}} w-[100px] h-[100px] rounded-full border-[25px] border-solid bg-white flex justify-center items-center">
+        <img src="assets/images/icon-{{picked}}.svg" alt="{{picked}}">
+      </div>
+    </div>
+    @if (result_done) {
+    <div class="play-again middle flex flex-col items-center flex-grow-1">
+      <p class="text-white text-[2.5em] mb-4">{{resultGame}}</p>
+      <button (click)="againPlay()" class="button bg-white border border-white px-[3.5rem] py-2 rounded-[10px] text-[.8em] text-[var(--dark-text)] hover:cursor-pointer">PLAY AGAIN</button>
+    </div>
+    }
+    <div class="house-picked flex flex-col items-center flex-grow-2">
+      <p class="text-white mb-10">THE HOUSE PICKED</p>
+      <div class="circle {{picked_cpu}} {{picked_cpu_done ? '': 'cpu' }} {{resultGame=='YOU LOSE' ? 'anim': ''}} w-[100px] h-[100px] rounded-full border-[25px] border-solid bg-white flex justify-center items-center">
+        @if (picked_cpu_done) {
+        <img src="assets/images/icon-{{picked_cpu}}.svg" alt="{{picked_cpu}}">
+        }
+      </div>
+    </div>
+  </div>
+  @if (result_done) {
+  <div class="play-again bottom flex flex-col items-center text-center">
+    <p class="text-white text-[2.5em] mb-4">{{resultGame}}</p>
+    <button (click)="againPlay()" class="button bg-white border border-white px-[3rem] py-2 rounded-[10px] text-[.8em] text-[var(--dark-text)] hover:cursor-pointer">PLAY AGAIN</button>
+  </div>
+  }

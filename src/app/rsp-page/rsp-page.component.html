@@ -1,0 +1,55 @@
+<!-- Main Container -->
+<div class="original-container min-h-screen border border-green-500 flex flex-col justify-around md:items-center">
+    <app-score-board [score]="score" class="mt-[20px]" />
+    
+    @if (!computerTurn) {
+    <div class="">
+        <app-rsp-game (onComputerTurn)="ComputerTurn($event)" />
+    </div>
+    }
+
+    @if (computerTurn) {
+    <div class="xl:block flex flex-col items-center">
+        <app-results 
+            [picked]="orignalPicked" 
+            (onAgainPlay)="againPlay()" 
+            (onScoreChange)="scoreChange($event)" 
+        />
+    </div>
+    }
+
+    <!-- Rules Button Container -->
+    <div class="rules flex lg:justify-end mx-5 my-5">
+        <button 
+            type="button" 
+            (click)="toggleModal()"
+            class="button border border-white text-white py-2 px-8 rounded-lg hover:bg-dark-text hover:cursor-pointer transition-colors md:mr-auto">
+            Rules
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+@if (isModalOpen) {
+<div class="modal fixed inset-0 bg-black/70 flex justify-center items-center">
+    <div class="modal-content bg-white rounded-lg sm:w-[400px] w-full h-full sm:h-auto sm:p-5 p-0">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center sm:mb-5 mx-8 my-8 sm:my-0">
+            <p class="title text-2xl text-dark-text">Rules</p>
+            <img 
+                src="assets/images/icon-close.svg" 
+                alt="close" 
+                (click)="closeModal()"
+                class="cursor-pointer"
+            >
+        </div>
+
+        <!-- Modal Content -->
+        <div class="flex-grow flex justify-center items-center sm:m-0 m-8">
+            <img src="assets/images/image-rules.svg" alt="rules">
+        </div>
+    </div>
+</div>
+}
+
+<app-bonus />
