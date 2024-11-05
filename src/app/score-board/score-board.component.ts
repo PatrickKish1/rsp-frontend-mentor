@@ -10,7 +10,8 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './score-board.component.css'
 })
 export class ScoreBoardComponent implements OnInit {
-  @Input() score: number = 0;
+  @Input() score = 0;
+  @Input() bonusScore = 0
   @Input() logo: string = ``;
   @Input() logoWidth: string = '';
   @Input() logoHeight: string = '';
@@ -26,6 +27,12 @@ export class ScoreBoardComponent implements OnInit {
       const scoreTemp = localStorage.getItem('score');
       if (scoreTemp) {
         this.score = Number.parseInt(scoreTemp);
+      }
+    }
+    if (this.isBrowser) {
+      const bonusScoreTemp = localStorage.getItem('bonusScore');
+      if (bonusScoreTemp) {
+        this.bonusScore = Number.parseInt(bonusScoreTemp);
       }
     }
     

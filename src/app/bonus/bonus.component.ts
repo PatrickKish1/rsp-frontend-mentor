@@ -15,8 +15,6 @@ export class BonusComponent {
   isModalOpen = false;
   computerTurn: boolean = false;
   orignalPicked: String = UserPick.none;
-  logo = "assets/images/logo-bonus.svg";
-  modalLogo = "assets/images/image-rules-bonus.svg";
 
 
   @Output() onComputerTurn = new EventEmitter<String>;

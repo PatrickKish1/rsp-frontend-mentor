@@ -18,12 +18,13 @@ import { RsplsService } from '../services/rspls.service';
 export class RspPageComponent implements OnInit {
   isModalOpen = false;
   isBonus = true;
-  bonusScore = 0;
   computerTurn = false;
   BonusComputerTurn = false;
   orignalPicked: String = UserPick.none;
+  bonusScore = 0;
   score: number = 0;
   logo = "assets/images/logo.svg";
+  bonusLogo = "assets/images/logo-bonus.svg";
   logoWidth = "120";
   logoHeight = "120";
   modalLogo = "assets/images/image-rules.svg";

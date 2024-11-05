@@ -106,6 +106,14 @@
     border-color: var(--scissors-gradient-from);
 }
 
+.lizard {
+    border-color: var(--lizard-gradient);
+}
+
+.spock {
+    border-color: var(--cyan-gradient);
+}
+
 .play-again.bottom {
     display: none;
 }
@@ -143,5 +151,11 @@
 
     .scissors {
         border-color: var(--scissors-gradient-from);
+    }
+    .lizard {
+        border-color: var(--lizard-gradient);
+    }
+    .spock {
+        border-color: var(--cyan-gradient);
     }
 }
