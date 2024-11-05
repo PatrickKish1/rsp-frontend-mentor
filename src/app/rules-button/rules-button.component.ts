@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-rules-button',
@@ -8,6 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './rules-button.component.css'
 })
 export class RulesButtonComponent {
+  @Input() logo: string = ``;
+
   isModalOpen: boolean = false;
 
   toggleModal() {

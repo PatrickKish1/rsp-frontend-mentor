@@ -1,28 +1,23 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserPick } from '../rock-paper-scissors.interface';
 import { ScoreBoardComponent } from "../score-board/score-board.component";
 import { RulesButtonComponent } from "../rules-button/rules-button.component";
+import { RspResultsComponent } from '../rsp-results/rsp-results.component';
 
 @Component({
   selector: 'app-bonus',
   standalone: true,
-  imports: [ScoreBoardComponent, RulesButtonComponent],
+  imports: [ScoreBoardComponent, RulesButtonComponent, RspResultsComponent],
   templateUrl: './bonus.component.html',
   styleUrl: './bonus.component.css'
 })
 export class BonusComponent {
-score: number = 0;
-logo = "assets/images/logo-bonus.svg";
-logoWidth = "120";
-logoHeight = "120";
+  isModalOpen = false;
+  computerTurn: boolean = false;
+  orignalPicked: String = UserPick.none;
+  logo = "assets/images/logo-bonus.svg";
+  modalLogo = "assets/images/image-rules-bonus.svg";
 
-
-lizardSelected() {
-throw new Error('Method not implemented.');
-}
-spockSelected() {
-throw new Error('Method not implemented.');
-}
 
   @Output() onComputerTurn = new EventEmitter<String>;
 
@@ -36,6 +31,14 @@ throw new Error('Method not implemented.');
 
   scissorsSelected() {
     this.onComputerTurn.emit(UserPick.scissors);
+  }
+
+  lizardSelected() {
+    this.onComputerTurn.emit(UserPick.lizard);
+  }
+
+  spockSelected() {
+    this.onComputerTurn.emit(UserPick.spock);
   }
 
 }

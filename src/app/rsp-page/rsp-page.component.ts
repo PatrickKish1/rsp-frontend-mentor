@@ -6,6 +6,7 @@ import { RspResultsComponent } from "../rsp-results/rsp-results.component";
 import { RspGameComponent } from "../rsp-game/rsp-game.component";
 import { BonusComponent } from "../bonus/bonus.component";
 import { RulesButtonComponent } from "../rules-button/rules-button.component";
+import { RsplsService } from '../services/rspls.service';
 
 @Component({
   selector: 'app-rsp-page',
@@ -16,17 +17,28 @@ import { RulesButtonComponent } from "../rules-button/rules-button.component";
 })
 export class RspPageComponent implements OnInit {
   isModalOpen = false;
-  computerTurn: boolean = false;
+  isBonus = true;
+  bonusScore = 0;
+  computerTurn = false;
+  BonusComputerTurn = false;
   orignalPicked: String = UserPick.none;
   score: number = 0;
-  logo = "assets/images/logo.svg"
+  logo = "assets/images/logo.svg";
+  logoWidth = "120";
+  logoHeight = "120";
+  modalLogo = "assets/images/image-rules.svg";
+  bonusModalLogo = "assets/images/image-rules-bonus.svg";
+
+
 
   @Output() onComputerTurn = new EventEmitter<string>();
+  @Output() onBonusComputerTurn = new EventEmitter<string>();
 
-  constructor(private RockPaperScissorsService: RockPaperScissorsService) {}
+  constructor(private RockPaperScissorsService: RockPaperScissorsService, private RsplsService: RsplsService) {}
 
   ngOnInit(): void {
     this.RockPaperScissorsService.checkScore();
+    this.RsplsService.checkBonusScore();
   }
 
   toggleModal() {
@@ -44,12 +56,26 @@ export class RspPageComponent implements OnInit {
       this.onComputerTurn.emit();
     }
   }
+  bonusComputerTurn(picked: String) {
+    if (picked != UserPick.none) {
+      this.orignalPicked = picked;
+      this.BonusComputerTurn = true;
+      this.onBonusComputerTurn.emit();
+    }
+  }
 
   againPlay() {
     this.computerTurn = false;
   }
+  bonusAgainPlay() {
+    this.BonusComputerTurn = false;
+  }
 
   scoreChange(score: number) {
     this.score = score;
+  }
+
+  bonusScoreChange(bonusScore: number) {
+    this.bonusScore = bonusScore;
   }
 }

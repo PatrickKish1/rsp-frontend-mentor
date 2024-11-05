@@ -1,7 +1,7 @@
 <!-- Main Container -->
 <div class="original-container min-h-screen border border-green-500 flex flex-col justify-around">
     <app-score-board [score]="score" [logo]=logo class="mt-[20px]" />
-    
+    <!-- RSP Game -->
     @if (!computerTurn) {
     <div class="">
         <app-rsp-game (onComputerTurn)="ComputerTurn($event)" />
@@ -19,5 +19,37 @@
     }
 
     <!-- Rules Button Container -->
-    <app-rules-button />
-<app-bonus />
+    <app-rules-button [logo]=modalLogo />
+
+
+    
+    <!-- Bonus game -->
+    <div class="w-full min-h-screen border border-green-500 flex flex-col justify-around mb-[35px] mt-[-14px]">
+        <app-score-board
+        [score]="bonusScore"
+        [logo]=logo
+        [logoWidth]=logoWidth
+        [logoHeight]=logoHeight
+        class="mt-[30px]"
+        />
+
+        @if (!BonusComputerTurn) {
+            <div class="">
+                <app-bonus (onComputerTurn)="bonusComputerTurn($event)" />
+            </div>
+        }
+        
+        
+
+        @if (BonusComputerTurn) {
+            <div class="xl:block flex flex-col items-center">
+                <app-results 
+                    [picked]="orignalPicked" 
+                    (onAgainPlay)="bonusAgainPlay()" 
+                    (onScoreChange)="bonusScoreChange($event)" 
+                />
+            </div>
+            }
+            <app-rules-button [logo]=bonusModalLogo class="mt-[-40px]" />
+    </div>
+</div>

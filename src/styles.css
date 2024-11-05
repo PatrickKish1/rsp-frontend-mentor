@@ -20,8 +20,8 @@
     --paper-gradient-to: hsl(230, 89%, 65%);
     --rock-gradient-from: hsl(349, 71%, 52%);
     --rock-gradient-to: hsl(349, 70%, 56%);
-    --lizard-gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
-    --cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+    --lizard-gradient: hsl(261, 72%, 63%);
+    --cyan-gradient: hsl(189, 59%, 53%);
 
     /* Neutral */
     --dark-text: hsl(229, 25%, 31%);

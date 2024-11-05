@@ -2,7 +2,9 @@ export enum UserPick {
     none = 'none',
     rock = 'rock',
     paper = 'paper',
-    scissors = 'scissors'
+    scissors = 'scissors',
+    lizard = 'lizard',
+    spock = 'spock'
 }
 
 export enum Result {

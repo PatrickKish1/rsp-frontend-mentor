@@ -14,6 +14,10 @@ module.exports = {
         'scissors-to': 'var(--scissors-gradient-to)',
         'dark-text': 'var(--dark-text)',
         'score-text': 'var(--score-text)',
+        'lizard-from': 'var(--lizard-gradient)',
+        'lizard-to': 'var(--lizard-gradient)',
+        'spock-from': 'var(--cyan-gradient)',
+        'spock-to': 'var(--cyan-gradient)'
       },
     },
   },
