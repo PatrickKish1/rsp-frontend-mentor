@@ -5,11 +5,12 @@ import { ScoreBoardComponent as ScoreBoardComponent } from "../score-board/score
 import { RspResultsComponent } from "../rsp-results/rsp-results.component";
 import { RspGameComponent } from "../rsp-game/rsp-game.component";
 import { BonusComponent } from "../bonus/bonus.component";
+import { RulesButtonComponent } from "../rules-button/rules-button.component";
 
 @Component({
   selector: 'app-rsp-page',
   standalone: true,
-  imports: [ScoreBoardComponent, RspResultsComponent, RspGameComponent, BonusComponent],
+  imports: [ScoreBoardComponent, RspResultsComponent, RspGameComponent, BonusComponent, RulesButtonComponent],
   templateUrl: './rsp-page.component.html',
   styleUrl: './rsp-page.component.css'
 })
@@ -18,6 +19,7 @@ export class RspPageComponent implements OnInit {
   computerTurn: boolean = false;
   orignalPicked: String = UserPick.none;
   score: number = 0;
+  logo = "assets/images/logo.svg"
 
   @Output() onComputerTurn = new EventEmitter<string>();
 

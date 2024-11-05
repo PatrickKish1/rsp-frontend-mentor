@@ -1,8 +1,9 @@
 .score-title {
     outline: 4px solid #ffffff76;
     border-radius: 10px;
-    width: 53%;
-    min-width: 650px;
+    min-width: 63%;
+    width: 200px;
+    max-width: 650px;
     padding: 1rem 1rem;
     margin: 20px auto;
     display: flex;
@@ -13,7 +14,6 @@
     border-radius: 10px;
     width: 20%;
     background-color: #fff;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,6 +27,34 @@
 
 .score-title span:last-child {
     color: var(--dark-text);
-    font-size: 2.5em;
+    font-size: 3.8em;
     font-weight: 700;
 }
+
+
+@media screen and (max-width: 768px) {
+    img {
+      width: 55%;
+      height: 55%;
+    }
+    .score-title .score {
+        width: 20%;
+    }
+    .score-title span:last-child {
+        font-size: 1.5em;
+    }
+  }
+
+
+@media screen and (max-width: 480px) {
+    img {
+      width: 60%;
+      height: 60%;
+    }
+    .score-title .score {
+        width: 26%;
+    }
+    .score-title span:last-child {
+        font-size: 2.0em;
+    }
+  }

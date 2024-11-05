@@ -11,6 +11,9 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class ScoreBoardComponent implements OnInit {
   @Input() score: number = 0;
+  @Input() logo: string = ``;
+  @Input() logoWidth: string = '';
+  @Input() logoHeight: string = '';
 
   private isBrowser: boolean;
 
