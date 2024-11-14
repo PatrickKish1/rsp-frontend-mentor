@@ -1,40 +1,47 @@
 <div class="bonus">
-    <div class="flex items-center justify-center">
-        <div class="relative w-[350px] h-[350px] bg-[url('/assets/images/bg-pentagon.svg')] bg-no-repeat bg-center bg-[length:80%] md:w-[350px] md:h-[350px] mt-[30px]">
-            <!-- Scissors Button -->
-            <div
-            (click)="scissorsSelected()"
-            class="absolute top-[-6%] left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[15px] border-scissors-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-scissors-from to-scissors-to hover:cursor-pointer md:w-28 md:h-28">
-            <img src="assets/images/icon-scissors.svg" alt="scissors">
-            </div>
-        
-            <!-- Paper Button -->
-            <div
-            (click)="paperSelected()"
-            class="absolute top-[22%] right-[-6%] w-32 h-32 rounded-full border-[15px] border-paper-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-paper-from to-paper-to hover:cursor-pointer md:w-28 md:h-28">
-            <img src="assets/images/icon-paper.svg" alt="paper">
-            </div>
-        
-            <!-- Rock Button -->
-            <div
-            (click)="rockSelected()"
-            class="absolute bottom-[-4%] right-[12%] w-32 h-32 rounded-full border-[15px] border-rock-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-rock-from to-rock-to hover:cursor-pointer md:w-28 md:h-28">
-            <img src="assets/images/icon-rock.svg" alt="rock">
-            </div>
-        
-            <!-- Spock Button -->
-            <div
-            (click)="spockSelected()"
-            class="absolute top-[23%] left-[-6%] w-32 h-32 rounded-full border-[15px] border-spock-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-spock-from to-spock-to hover:cursor-pointer md:w-28 md:h-28">
-            <img src="assets/images/icon-spock.svg" alt="spock">
-            </div>
-        
-            <!-- Lizard Button -->
-            <div
-            (click)="lizardSelected()"
-            class="absolute bottom-[-4%] left-[9%] w-32 h-32 rounded-full border-[15px] border-lizard-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-lizard-from to-lizard-to hover:cursor-pointer md:w-28 md:h-28">
-            <img src="assets/images/icon-lizard.svg" alt="lizard">
-            </div>
-        </div>
+  <div class="flex items-center justify-center">
+    <div
+      class="relative w-[350px] h-[350px] bg-[url('/assets/images/bg-pentagon.svg')] bg-no-repeat bg-center bg-[length:80%] md:w-[350px] md:h-[350px] mt-[30px]"
+    >
+      <!-- Scissors Button -->
+      <div
+        (click)="scissorsSelected()"
+        class="absolute top-[-6%] left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[15px] border-scissors-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-scissors-from to-scissors-to hover:cursor-pointer md:w-28 md:h-28"
+      >
+        <img src="assets/images/icon-scissors.svg" alt="scissors" />
+      </div>
+
+      <!-- Paper Button -->
+      <div
+        (click)="paperSelected()"
+        class="absolute top-[22%] right-[-6%] w-32 h-32 rounded-full border-[15px] border-paper-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-paper-from to-paper-to hover:cursor-pointer md:w-28 md:h-28"
+      >
+        <img src="assets/images/icon-paper.svg" alt="paper" />
+      </div>
+
+      <!-- Rock Button -->
+      <div
+        (click)="rockSelected()"
+        class="absolute bottom-[-4%] right-[12%] w-32 h-32 rounded-full border-[15px] border-rock-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-rock-from to-rock-to hover:cursor-pointer md:w-28 md:h-28"
+      >
+        <img src="assets/images/icon-rock.svg" alt="rock" />
+      </div>
+
+      <!-- Spock Button -->
+      <div
+        (click)="spockSelected()"
+        class="absolute top-[23%] left-[-6%] w-32 h-32 rounded-full border-[15px] border-spock-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-spock-from to-spock-to hover:cursor-pointer md:w-28 md:h-28"
+      >
+        <img src="assets/images/icon-spock.svg" alt="spock" />
+      </div>
+
+      <!-- Lizard Button -->
+      <div
+        (click)="lizardSelected()"
+        class="absolute bottom-[-4%] left-[9%] w-32 h-32 rounded-full border-[15px] border-lizard-from bg-white flex items-center justify-center transition-colors hover:bg-gradient-to-r from-lizard-from to-lizard-to hover:cursor-pointer md:w-28 md:h-28"
+      >
+        <img src="assets/images/icon-lizard.svg" alt="lizard" />
+      </div>
     </div>
+  </div>
 </div>

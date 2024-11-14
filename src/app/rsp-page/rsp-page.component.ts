@@ -74,9 +74,11 @@ export class RspPageComponent implements OnInit {
 
   scoreChange(score: number) {
     this.score = score;
+    console.log(score)
   }
 
   bonusScoreChange(bonusScore: number) {
     this.bonusScore = bonusScore;
+    console.log(`bonus score is: ${bonusScore}..... and this.bonusScore is ${this.bonusScore}`)
   }
 }

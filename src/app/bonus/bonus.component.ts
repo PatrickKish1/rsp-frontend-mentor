@@ -7,7 +7,7 @@ import { RspResultsComponent } from '../rsp-results/rsp-results.component';
 @Component({
   selector: 'app-bonus',
   standalone: true,
-  imports: [ScoreBoardComponent, RulesButtonComponent, RspResultsComponent],
+  imports: [],
   templateUrl: './bonus.component.html',
   styleUrl: './bonus.component.css'
 })

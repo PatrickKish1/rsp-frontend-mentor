@@ -13,11 +13,11 @@ export class RsplsService {
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
     if (this.isBrowser) {
-      this.initializeScore();
+      this.initializeBonusScore();
     }
   }
 
-  private initializeScore(): void {
+  private initializeBonusScore(): void {
     const bonusScoreTemp = localStorage.getItem('bonusScore');
     if (bonusScoreTemp !== null) {
       this.bonusScore = parseInt(bonusScoreTemp, 10);
@@ -82,7 +82,7 @@ export class RsplsService {
     if (result === Result.you_win) {
       bonusScore++;
     } else if (result === Result.you_lose) {
-      bonusScore = bonusScore
+      bonusScore = bonusScore;
     }
 
     localStorage.setItem('bonusScore', bonusScore.toString());
